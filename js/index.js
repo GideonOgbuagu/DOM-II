@@ -10,6 +10,14 @@ const navLinks = document.querySelectorAll("a");
 
 // Logo "mouseenter"/"mouseleave" event
 
+window.addEventListener('load', e => alert('Gideon is the best!'))
+
+window.addEventListener('resize', e => console.log('Gideon is the best!'));
+
+window.addEventListener('copy', e => alert("Don\'t steal from me!"));
+
+
+
 logo.addEventListener("mouseenter", (e) =>{
     if(e.target){
         logo.style.transform = "scale(2)";
