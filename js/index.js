@@ -1,19 +1,52 @@
 // Your code goes here
 
-// Toggle nav & footer backgroundColor with dblclick event
+//Variables
 
-const navContainer = document.querySelector(".nav-container");
+const logo = document.querySelector(".logo-heading");
+const navMain = document.querySelector(".main-navigation");
 const footer = document.querySelector("footer");
-// #17A2B8
+const navLinks = document.querySelectorAll("a");
 
-navContainer.addEventListener("dblclick", (e) =>{
-    navContainer.style.backgroundColor = "#17A2B8";
-})
-footer.addEventListener("dblclick", function(){
-    footer.style.backgroundColor = "#17A2B8";
+
+// Logo "mouseenter"/"mouseleave" event
+
+logo.addEventListener("mouseenter", (e) =>{
+    if(e.target){
+        logo.style.transform = "scale(2)";
+        logo.style.transition = "transform 1s"
+    } 
+    logo.addEventListener("mouseleave", (e) => {
+        logo.style.transform = "scale(1)";
+    })
+
 })
 
-// Toggle body backgroundColor with click event
+// Intro Image "load" event
+const introImg = document.querySelector(".intro");
+
+introImg.addEventListener("load", (e) => {
+    introImg.style.display = "none";
+    setTimeout(function(){
+        introImg.style.display = "block";
+        // introImg.style.transition = "display 20s"
+    }, 5000);
+    
+})
+
+// Nav "doubleclick" event
+
+navMain.addEventListener("dblclick", function(e){
+    
+    if(navMain.style.backgroundColor === "white"){
+        navMain.style.backgroundColor = "#17A2B8";
+    } else {
+        navMain.style.backgroundColor = "white";
+    }
+    
+    e.stopPropagation();
+})
+
+// Toggle body backgroundColor with "click" event
 
 const bodyElement = document.querySelector("body");
 
@@ -23,6 +56,40 @@ bodyElement.addEventListener('click', (e) => {
     }else {
         bodyElement.style.backgroundColor = "white";
     }
+    e.stopPropagation();
+})
+
+// sign me up "mouseover" buttons
+
+const button = document.querySelectorAll(".btn");
+
+button.forEach(el => {
+    el.addEventListener("mouseover", function(e){
+        if(e.target){
+            el.style.transform = "scale(1.2)";
+            el.style.transition = "transform 500ms"
+        } 
+        el.addEventListener("mouseleave", (e) => {
+            el.style.transform = "scale(1)";
+        })
+            
+    })
+})
+
+// "scroll" event
+
+footer.addEventListener("blur", (e) => {
+    footer.style.backgroundColor = "#17A2B8";
+    e.stopPropagation();
+});
+
+// resize 
+navLinks.forEach(el => {
+    el.addEventListener("focus", (e) => {
+        el.style.fontSize = "2rem";
+        e.stopPropagation();
+    })
+    
 })
 
 
