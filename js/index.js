@@ -22,14 +22,14 @@ logo.addEventListener("mouseenter", (e) =>{
 })
 
 // Intro Image "load" event
-const introImg = document.querySelector(".intro");
+const introImg = document.querySelector(".intro img");
 
-introImg.addEventListener("load", (e) => {
+introImg.addEventListener("load", () => {
     introImg.style.display = "none";
     setTimeout(function(){
         introImg.style.display = "block";
-        // introImg.style.transition = "display 20s"
-    }, 5000);
+        introImg.style.transition = "display 2s"
+    }, 4000);
     
 })
 
@@ -76,9 +76,9 @@ button.forEach(el => {
     })
 })
 
-// "scroll" event
+// "focus" event
 
-footer.addEventListener("blur", (e) => {
+footer.addEventListener("focus", (e) => {
     footer.style.backgroundColor = "#17A2B8";
     e.stopPropagation();
 });
