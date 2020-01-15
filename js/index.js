@@ -86,8 +86,12 @@ button.forEach(el => {
 
 // "focus" event
 
-footer.addEventListener("focus", (e) => {
-    footer.style.backgroundColor = "#17A2B8";
+footer.addEventListener("click", (e) => {
+    if(footer.style.backgroundColor === "white"){
+        footer.style.backgroundColor = "#17A2B8";
+    } else {
+        footer.style.backgroundColor = "white";
+    }
     e.stopPropagation();
 });
 
